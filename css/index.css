@@ -2,12 +2,27 @@
     background-color: black;
     border-radius: 15px;
     padding: 10% 0;
+    margin-left: 5px;
 }
 
 @media only screen and (max-width: 991.20px) {
     .black-bold{
+        background-color: rgb(51, 51, 51);
         margin-top: 7px;
         width: 150px;
+    }
+}
+
+.grey-bold{
+    background-color: rgb(226, 225, 225);
+    border-radius: 15px;
+    padding: 10% 0;
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 991.20px) {
+    .grey-bold{
+        background-color: transparent;
     }
 }
 
