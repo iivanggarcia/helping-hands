@@ -1,0 +1,12 @@
+.black-bold{
+    background-color: black;
+    border-radius: 15px;
+    padding: 10% 0;
+}
+
+@media only screen and (max-width: 991.20px) {
+    .black-bold{
+        margin-top: 7px;
+        width: 150px;
+    }
+  }
