@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil:Asociación Benefica</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/index.js"></script>
+
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .data-user img{grid-area: img; height: 4rem; width: 4rem;}
+        .data-user #name{grid-area: name; font-size: 2rem;}
+        .data-user #email{grid-area: email; font-size: 1rem;}
+        .data-user #phone{grid-area:phone;font-size:1rem;}
+        .data-user #edit{grid-area: edit;}
+
+        .data-user{
+            display: grid;
+            grid-template-areas: "img name"
+            "img email" "img phone" "img edit"
+            ;
+            width: 50%;
+            height: 9rem;
+            margin: 2rem 0 3rem 2rem;
+        }
+
+        #navbarSupportedContent{
+            padding-left: 75%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light" style="border-bottom: 2px solid black;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Charity <img src="./rsc/logo.png" class="img-hm30"> Store</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+                <ul class="navbar-nav me-left mb-2 mb-lg-0">
+                
+                    <li class="nav-item">
+                        <a class="nav-link text-dark grey-bold" href="#">Ayuda</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link text-dark grey-bold" href="#"> <i class="fa-solid fa-user"></i>  Usuario</a>
+                    </li>
+                
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-3 bña">
+
+            </div>
+
+            <div class="col" >
+                  <!--Data User-->
+                    <div class="data-user">
+                        <img src="" alt="profile-picture" class="rounded-circle"> 
+                        <h1 id="name">Nombre</h1>
+                        <h5 id="email">organizacion_benefica@gmail.com</h5>
+                        <h5 id="phone">+52 55 98578795</h5>
+                        <a id="edit" href="#info" data-bs-toggle="collapse">Editar</a>
+                    </div>
+
+                    <div id="info" class="collapse">
+                        <form action="">
+
+                            <h3>Datos generales</h3>
+                            <div class="container mb-3 mt-3">
+                            
+                                <label >Nombre:</label>
+                                <input type="name" class="form-control" id="name" placeholder="Cesar" name="name">
+                            </div>
+    
+                            <div class="container mb-3 mt-3">
+                                    <label for="">Número telefonico:</label>
+                                    <input type="phone" class="form-control" id="phone" placeholder="phone" name="phone">
+                            </div>
+    
+                            <div class="container mb-3 mt-3">
+                                <label for="">Correo electronico:</label>
+                                <input type="email" class="form-control" id="email" placeholder="" name="email">
+                            </div>
+    
+    
+                            <h3>Dirección</h3>
+                            
+                                <div class="mb-3 mt-3">
+                                    <label for="">Calle:</label>
+                                    <input type="street" class="form-control" id="street" placeholder="Calle y número" name="street">
+                                </div>
+    
+                                <div class="mb-3 mt-3">
+                                    <label for="">Colonia</label>
+                                    <input type="suburb" class="form-control" id="suburb" placeholder="" name="suburb">
+                                </div>
+    
+                                <div class="mb-3 mt-3">
+                                    <label for="">Alcaldia</label>
+                                    <div class="dropdown" >
+                                        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" style="width: 30%; text-align: right;"> 
+                                        
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        <li><a href="" class="dropdown-item"></a></li>
+                                        </ul>
+                                    </div> 
+                                </div>
+    
+    
+                            <div class="mb-3 mt-3">
+                                    <label for="">Codigó Postal</label>
+                                    <input type="zip-code" class="form-control" id="zip-code" placeholder="" name="zip-code">
+                            </div>
+    
+    
+                                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    
+                        </form>
+
+                    </div>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"></script>
+    
+</body>
+</html>
