@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Store</title>
-    <link rel="stylesheet" href="./css/index.css">
-    <script src="./js/index.js"></script>
-    <link rel="icon" type="image/x-icon" href="./rsc/favicon.ico">
+    <title>Charity Store - Inicio de Sesión</title>
+    <link rel="stylesheet" href="./../css/login.css">
+    <script src="./../js/login.js"></script>
+    <link rel="icon" type="image/x-icon" href="./../rsc/favicon.ico">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -20,7 +20,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Charity <img src="./rsc/logo.png" class="img-hm30"> Store</a>
+            <a class="navbar-brand" href="./../index.html">Charity <img src="./../rsc/logo.png" class="img-hm30"> Store</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -29,20 +29,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 </ul>
-                <form class="d-flex me-auto" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Enlatados, líquidos, otros"
-                        aria-label="Search">
-                    <button class="btn btn-outline-dark" type="submit">Buscar</button>
-                </form>
                 <ul class="navbar-nav me-left mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link text-light black-bold" href="#"> <i class="fa-solid fa-cart-shopping"></i> Carrito</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark grey-bold" href="./pages/login.html"> <i class="fa-solid fa-user"></i> Iniciar sesión</a>
+                        <a class="nav-link text-dark grey-bold" href="./login.html"> <i class="fa-solid fa-user"></i> Iniciar sesión</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark grey-bold" href="./pages/registro.html">Regístrate</a>
+                        <a class="nav-link text-dark grey-bold" href="./registro.html">Regístrate</a>
                     </li>
                 </ul>
 
@@ -50,22 +45,33 @@
         </div>
     </nav>
 
-    <main>
-        <div>
-            <h1>Sí <br>
-                <i class="fa-solid fa-eye text-dark"></i>
-                Para hacer espacio jeje
-            </h1>
+    <div class="container login-form" id="container">
+        <h2 class="login-title">Inicio de Sesión</h2>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form>
+                    <div class="input-group login-userinput">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                        <input id="txtCorreo" type="email" class="form-control" name="correo" placeholder="Correo">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        <input id="txtPassword" type="password" class="form-control" name="password"
+                            placeholder="Contraseña">
+                        <span id="showPassword" class="input-group-btn">
+                            <button class="btn btn-default reveal" type="button"><i
+                                    class="fa-solid fa-eye"></i></button>
+                        </span>
+                    </div>
+                    <br>
+                    <button class="btn btn-dark submit" type="button">Entrar</button>
+                    <div class="checkbox login-options">
+                        <a href="olvidastecontrasena.html" class="login-forgot">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="main-cont">
-            <div class="lateral">
-                a
-            </div>
-            <div class="central">
-                list
-            </div>
-        </div> 
-    </main>
+    </div>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

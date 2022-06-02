@@ -26,17 +26,15 @@
     }
 }
 
-.img-hm30{
-    height: 30px;
+#container {
+    padding: 30vh;
 }
 
-.main-cont{
-    display: flex;
-}
-
-.lateral{
-    background-color: blueviolet;
-    width: 30vw;
-    height: 80vh;
-    padding: 15vw;
-}
+.login-form{width:390px;}
+.login-title{text-align:center;color: black;}
+.login-userinput{margin-bottom: 10px;}
+.login-button{margin-top:10px;}
+.login-options{margin-bottom:0px;}
+.login-forgot{float: right;}
+.submit{width: 100%;}
+.img-hm30{height: 30px;}
