@@ -7,6 +7,7 @@
     <title>Perfil:Asociación Benefica</title>
 
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/profile-client.css">
     <script src="./js/index.js"></script>
 
 
@@ -16,31 +17,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <style>
-        .data-user img{grid-area: img; height: 4rem; width: 4rem;}
-        .data-user #name{grid-area: name; font-size: 2rem;}
-        .data-user #email{grid-area: email; font-size: 1rem;}
-        .data-user #phone{grid-area:phone;font-size:1rem;}
-        .data-user #edit{grid-area: edit;}
-
-        .data-user{
-            display: grid;
-            grid-template-areas: "img name"
-            "img email" "img phone" "img edit"
-            ;
-            width: 50%;
-            height: 9rem;
-            margin: 2rem 0 3rem 2rem;
-        }
-
-        #navbarSupportedContent{
-            padding-left: 75%;
-        }
-    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light" style="border-bottom: 2px solid black;">
+
+
+    <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Charity <img src="./rsc/logo.png" class="img-hm30"> Store</a>
 
@@ -50,9 +31,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
     
-                <ul class="navbar-nav me-left mb-2 mb-lg-0">
+                <ul class="navbar-nav mb-2 mb-lg-0">
                 
                     <li class="nav-item">
                         <a class="nav-link text-dark grey-bold" href="#">Ayuda</a>
@@ -68,99 +49,98 @@
     </nav>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid d-flex" id="main">
 
-        <div class="row">
-            <div class="col-3 bña">
-
+            <div class="panel-lateral">
+                <div class="list-group w-100">
+                    <a href="" class="list-group-item">Hola</a>
+                    <a href="" class="list-group-item">Hola</a>
+                    <a href="" class="list-group-item">Uy</a>
+                </div>  
             </div>
 
-            <div class="col" >
-                  <!--Data User-->
-                    <div class="data-user">
-                        <img src="" alt="profile-picture" class="rounded-circle"> 
+            <div class="panel-principal" >
+                <!--Data User-->
+                  <div class="data-user bordes">
+                      <img src="./rsc/user-new.png" alt="profile-picture" class="rounded-circle bordes w-50 h-75"> 
+                      <div class="data bordes">
                         <h1 id="name">Nombre</h1>
                         <h5 id="email">organizacion_benefica@gmail.com</h5>
                         <h5 id="phone">+52 55 98578795</h5>
                         <a id="edit" href="#info" data-bs-toggle="collapse">Editar</a>
-                    </div>
+                      </div>
+                  </div>
 
-                    <div id="info" class="collapse">
-                        <form action="">
+                  <div id="info" class="collapse">
+                      <form action="">
+                          <div class="datos-generales">
+                              <h3>Datos generales</h3>
+                             <div class="mb-3 mt-3">
+                                  <labe class="form-label">Nombre:</label>
+                                  <input type="name" class="form-control w-75 " id="name" placeholder="Cesar" name="name">
+                              </div>
+      
+                             <div class="mb-3 mt-3">
+                                      <label for="">Número telefonico:</label>
+                                      <input type="phone" class="form-control w-75" id="phone" placeholder="phone" name="phone">
+                              </div>
+      
+                              <div class="mb-3 mt-3">
+                                  <label for="">Correo electronico:</label>
+                                  <input type="email" class="form-control w-75" id="email" placeholder="" name="email">
+                              </div>
+      
+                          </div>
 
-                            <h3>Datos generales</h3>
-                            <div class="container mb-3 mt-3">
-                            
-                                <label >Nombre:</label>
-                                <input type="name" class="form-control" id="name" placeholder="Cesar" name="name">
-                            </div>
-    
-                            <div class="container mb-3 mt-3">
-                                    <label for="">Número telefonico:</label>
-                                    <input type="phone" class="form-control" id="phone" placeholder="phone" name="phone">
-                            </div>
-    
-                            <div class="container mb-3 mt-3">
-                                <label for="">Correo electronico:</label>
-                                <input type="email" class="form-control" id="email" placeholder="" name="email">
-                            </div>
-    
-    
-                            <h3>Dirección</h3>
-                            
-                                <div class="mb-3 mt-3">
-                                    <label for="">Calle:</label>
-                                    <input type="street" class="form-control" id="street" placeholder="Calle y número" name="street">
-                                </div>
-    
-                                <div class="mb-3 mt-3">
-                                    <label for="">Colonia</label>
-                                    <input type="suburb" class="form-control" id="suburb" placeholder="" name="suburb">
-                                </div>
-    
-                                <div class="mb-3 mt-3">
-                                    <label for="">Alcaldia</label>
-                                    <div class="dropdown" >
-                                        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" style="width: 30%; text-align: right;"> 
-                                        
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        <li><a href="" class="dropdown-item"></a></li>
-                                        </ul>
-                                    </div> 
-                                </div>
-    
-    
-                            <div class="mb-3 mt-3">
-                                    <label for="">Codigó Postal</label>
-                                    <input type="zip-code" class="form-control" id="zip-code" placeholder="" name="zip-code">
-                            </div>
-    
-    
-                                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-    
-                        </form>
+                          <div class="dirrecion">
 
-                    </div>
+                          <h3>Dirección</h3>
+                          
+                          <div class="mb-3 mt-3">
+                              <label for="">Calle:</label>
+                              <input type="street" class="form-control w-75" id="street" placeholder="Calle y número" name="street">
+                          </div>
+
+                          <div class="mb-3 mt-3">
+                              <label for="">Colonia</label>
+                              <input type="suburb" class="form-control w-75" id="suburb" placeholder="" name="suburb">
+                          </div>
+
+                          <div class="mb-3 mt-3">
+                              <label for="">Alcaldia</label>
+                              <select id="alcaldias" class="form-select w-75">
+                                  <option value="Azcapotzalco">Azcapotzalco</option>
+                                  <option value="Coyoacán">Coyoacán</option>
+                                  <option value="Cuajimalpa de Morelos">Cuajimalpa</option>
+                                  <option value="Gustavo A. Madero"> Gustavo A. Madero</option>
+                                  <option value="Iztacalco">Iztacalco</option>
+                                  <option value="Iztapalapa">Iztapalapa</option>
+                                  <option value="La Magdalena Contreras">La Magdalena Contreras</option>
+                                  <option value="Milpa Alta">Milpa Alta</option>
+                                  <option value="Álvaro Obregón">Álvaro Obregón</option>
+                                  <option value="Tláhuac">Tláhuac</option>
+                                  <option value="Tlalpan">Tlalpan</option>
+                                  <option value="Xochimilco">Xochimilco</option>
+                                  <option value="Benito Juárez">Benito Juárez</option>
+                                  <option value="Cuauhtémoc">Cuauhtémoc</option>
+                                  <option value="">Miguel Hidalgo</option>
+                                  <option value="">Venustiano Carranza</option>
+                              </select>
+                          </div>
+
+
+                      <div class="mb-3 mt-3">
+                              <label for="">Codigó Postal</label>
+                              <input type="zip-code" class="form-control w-75" id="zip-code" placeholder="" name="zip-code">
+                      </div>
+
+                          </div>
+  
+                          <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                      </form>
+
+                  </div>
             </div>
-
-        </div>
-        
 
     </div>
 

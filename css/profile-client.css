@@ -1,0 +1,35 @@
+
+/* Data User*/
+
+.data-user img{grid-area: img; height: 4rem; width: 4rem;}
+.data-user #name{grid-area: name; font-size: 2rem;}
+.data-user #email{grid-area: email; font-size: 1rem;}
+.data-user #phone{grid-area:phone;font-size:1rem;}
+.data-user #edit{grid-area: edit;}
+
+.data-user{
+    display: grid;
+    grid-template-areas: "img name"
+    "img email" 
+    "img phone" "img edit"
+    ;
+    width: 70%;
+    height: 9rem;
+    margin: 2rem 0 3rem 2rem;
+}
+
+.data{
+    width: 100%;
+    margin-right: 15rem;
+}
+
+.bordes{border: 2px solid black;}
+#info{margin-left: 2rem;}
+.panel-lateral{width: 25%;}
+.panel-principal{width: 75%;}
+
+@media only screen and (max-width: 991.20px){
+    #main{flex-direction: column-reverse;}
+    .panel-lateral{width: 100%;}
+    .panel-principal{width: 100%;}
+}
