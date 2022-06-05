@@ -5,8 +5,116 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualizar Stock</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/object.css">
+
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+
+    <!--Header-->
+    <nav class="navbar navbar-expand-lg bg-light borde-b mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Charity <img src="./rsc/logo.png" class="img-hm30"> Store</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+                <ul class="navbar-nav mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark grey-bold" href="#">Ayuda</a>
+                    </li>
+
+                    <li class="nav-item user">
+                        <a class="nav-link text-dark grey-bold" href="#"> <i class="fa-solid fa-user"></i> Benefactor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark grey-bold" href="#"> Cerrar Sesión</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="products">
+            <h1 class="text-center mb-4">Productos Ofertados</h1>
+            
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="product d-flex rounded border border-dark w-100 p-4">
+                        <div class="info w-75">
+                          <h1>Producto 1</h1>
+                          <h5>Detalles</h5>
+                          <h5>Fecha de Vencimiento</h5>
+                          <h5>Unidades: 2</h5>
+                        </div>
     
+                        <div class="actions d-flex flex-column pt-4">
+                  
+                            <a href="#add-u" data-bs-toggle="collapse"> <i class="fa-solid fa-circle-plus"></i> Agregar Unidades</a>
+                            <div class="collapse" id="add-u">
+                                <form action="" name="formPlus" id="formPlus">
+                                    <input type="number" name="" id="" class="w-25">
+                                    <button type="submit">Agregar</button>
+                                </form>
+                            </div>
+                    
+                            <a href="#minus-u" data-bs-toggle="collapse"> <i class="fa-solid fa-circle-minus"></i> Disminuir unidades</a>
+                            <div class="collapse" id="minus-u">
+                                <form action="" name="formMinus" id="formMinus">
+                                <input type="number" name="" id="" class="w-25">
+                                <button type="submit">Disminuir</button>
+                                </form>
+                            </div>
+                    
+                            <form action="" name="formErase" id="formErase">
+                                <a href=""><i class="fa-solid fa-circle-xmark"></i> Eliminar Producto </a>
+                            </form>
+                         
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="add-product pt-2">
+            <a href="#data-product" data-bs-toggle="collapse"> <i class="fa-solid fa-circle-plus"></i> Agregar Producto</a>
+            <div class="collapse" id="data-product">
+                <form id="add-product" name="add-product" class="d-flex flex-column " action="">
+                    <label for="">Nombre :</label>
+                    <input type="text">
+                    <label for="">Descripción</label>
+                    <input type="text">
+                    <label for="">Fecha de Vencimiento</label>
+                    <input type="date" name="" id="" class="w-25">
+                    <label for="">Unidades</label>
+                    <input type="number" name="" id="" class="w-50 mb-2">
+                    <button type="submit " class="w-25">Agregar</button>
+                </form>
+            </div>
+        </div>
+    
+    </div>
+
+     <!-- JavaScript Bundle with Popper -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"></script>
+
 </body>
 </html>
