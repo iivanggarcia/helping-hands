@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil:Benefactor</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/profile-client.css">
+    <script src="./js/index.js"></script>
+
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg bg-light borde-b mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Charity <img src="./rsc/logo.png" class="img-hm30"> Store</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                
+                    <li class="nav-item">
+                        <a class="nav-link text-dark grey-bold" href="#">Ayuda</a>
+                    </li>
+                
+                    <li class="nav-item user" >
+                        <a class="nav-link text-dark grey-bold" href="#"> <i class="fa-solid fa-user"></i>Benefactor</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid d-flex" id="main">
+
+            <div class="panel-lateral mt-2 ">
+                <div class="list-group w-100">
+                    <a href="" class="list-group-item">Hola</a>
+                    <a href="" class="list-group-item">Hola</a>
+                    <a href="" class="list-group-item">Uy</a>
+                    <a href="" class="list-group-item">Cerrar Sesión</a>
+                </div>  
+            </div>
+
+            <div class="panel-principal" >
+                <!--Data User-->
+                  <div class="data-user  mb-5 d-flex">
+                      <img src="./rsc/user-new.png" alt="profile-picture" class="rounded-circle bordes"> 
+                      <div class="data">
+                        <h1 id="name">Nombre</h1>
+                        <h5 id="email">organizacion_benefica@gmail.com</h5>
+                        <h5 id="phone">+52 55 98578795</h5>
+                        <a id="edit" href="#info" data-bs-toggle="collapse">Editar</a>
+                      </div>
+                  </div>
+
+                  <div id="info" class="collapse mb-5">
+                      <form action="">
+                          <div class="datos-generales">
+                              <h3>Datos generales</h3>
+                             <div class="mb-3 mt-3">
+                                  <labe class="form-label">Nombre de la institución:</label>
+                                  <input type="name" class="form-control w-75 " id="name" placeholder="Cesar" name="name">
+                              </div>
+      
+                             <div class="mb-3 mt-3">
+                                      <label for="">Número telefonico:</label>
+                                      <input type="phone" class="form-control w-75" id="phone" placeholder="phone" name="phone">
+                              </div>
+      
+                              <div class="mb-3 mt-3">
+                                  <label for="">Correo electronico:</label>
+                                  <input type="email" class="form-control w-75" id="email" placeholder="" name="email">
+                              </div>
+
+                              <div class="mb-3 mt-3">
+                                <label for="">R.F.C:</label>
+                                <input type="email" class="form-control w-75" id="email" placeholder="" name="email">
+                             </div>
+      
+                          </div>
+                          <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                      </form>
+
+                  </div>
+            </div>
+
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"></script>
+    
+</body>
+</html>
