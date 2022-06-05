@@ -1,4 +1,4 @@
-.black-bold{
+.black-bold {
     background-color: black;
     border-radius: 15px;
     padding: 10% 0;
@@ -6,14 +6,14 @@
 }
 
 @media only screen and (max-width: 991.20px) {
-    .black-bold{
+    .black-bold {
         background-color: rgb(51, 51, 51);
         margin-top: 7px;
         width: 150px;
     }
 }
 
-.grey-bold{
+.grey-bold {
     background-color: rgb(226, 225, 225);
     border-radius: 15px;
     padding: 10% 0;
@@ -21,22 +21,80 @@
 }
 
 @media only screen and (max-width: 991.20px) {
-    .grey-bold{
+    .grey-bold {
         background-color: transparent;
     }
 }
 
-.img-hm30{
+.img-hm30 {
     height: 30px;
 }
 
-.main-cont{
+.main-rect {
+    background: rgba(255, 0, 0, 0.6) url("./../rsc/logo.png") no-repeat center;
+    background-blend-mode: darken;
+    display: flex;
+    align-items: center;
+    height: 50vh;
+    color: white;
+}
+
+.rect{
+    width: 100%;
+    text-align: center;
+    font-size: 8vh;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.main-rect b {
+    font-weight: 700;
+}
+
+.main-cont {
     display: flex;
 }
 
-.lateral{
-    background-color: blueviolet;
-    width: 30vw;
-    height: 80vh;
-    padding: 15vw;
+.tienda{ 
+    width: 100%;
+    padding: 5vw 15vw 0vw 15vw;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+.title{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.title a{
+    padding: 1vh;
+    color: black;
+}
+
+.title a:hover{
+    color: black;
+}
+
+.central{
+    display: flex;
+    padding-bottom: 3vw;
+}
+
+.central1{
+    width: 33.33%;
+    height: 20vh;
+    background-color: aqua;
+}
+
+.central2{
+    width: 33.33%;
+    height: 20vh;
+    background-color: red;
+}
+
+.central3{
+    width: 33.33%;
+    height: 20vh;
+    background-color: black;
 }
