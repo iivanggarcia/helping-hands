@@ -84,81 +84,124 @@
             </div>
 
             <div id="info" class="collapse mb-5">
-                <form action="">
                     <div class="datos-generales">
-                        <h3>Datos generales</h3>
-                        <div class="mb-3 mt-3">
-                            <labe class="form-label">Nombre:</label>
-                                <input type="name" class="form-control w-75 " id="name" placeholder="" name="name">
-                        </div>
 
                         <div class="mb-3 mt-3">
-                            <form id="formPhone" name="formPhone">
-                                <div><label><i class="fas fa-phone"></i> Teléfono celular:</label></div>
-                                <input name="phone1" id="phone1" data-validetta="number" value='+52 55 98578795'
-                                    disabled />
-                                <input name="usuario" id="usuario" value='<dohiofshfshd>' hidden />
-                                <a class="btn brown cambiarPhone">Modificar</a>
-                                <button type="submit" name="btnUpdatePhone" id="btnUpdatePhone"
-                                    class="btn btn-outline-success updatePhone" disabled>Actualizar</button>
+                            <form id="formName" name="forName" class="d-flex">
+                                <div class="op d-flex">
+                                    <label class="">Nombre:</label>
+                                    <input name="name" id="nombre" data-validetta="name" value='Organización' disabled />
+                                </div>
+                                <div class="botones">
+                                    <a class="btn brown cambiarName">Modificar</a>
+                                    <button type="submit" name="btnUpdatePhone" id="btnUpdateName" class="btn btn-outline-success updatePhone" disabled>Actualizar</button>
+                                </div>                      
                             </form>
                         </div>
 
                         <div class="mb-3 mt-3">
-                            <label for="">Correo electronico:</label>
-                            <input type="email" class="form-control w-75" id="email" placeholder="" name="email">
+                            <form id="formPhone" name="formPhone" class="d-flex">
+                                <div class="op">
+                                    <label>Teléfono celular:</label>
+                                    <input name="phone1" id="phone1" data-validetta="number" value='+52 55 98578795' disabled />
+                                </div>
+                                <div class="botones">
+                                    <a class="btn brown cambiarPhone">Modificar</a>
+                                    <button type="submit" name="btnUpdatePhone" id="btnUpdatePhone" class="btn btn-outline-success updatePhone" disabled>Actualizar</button>
+                                </div>                            
+                            </form>
+                        </div>
+
+                        <div class="mb-3 mt-3">
+                            <form id="formEmail" name="formEmail" class="d-flex">
+                               <div class="op">
+                                    <label>Correo electronico:</label>
+                                    <input name="correo" id="correo" data-validetta="email" value='sample@sample' disabled />
+                                </div>
+                                <div class="botones">
+                                    <a class="btn brown cambiarEmail">Modificar</a>
+                                    <button type="submit" name="btnUpdateEmail" id="btnUpdateEmail" class="btn btn-outline-success" disabled>Actualizar</button>
+                                </div>
+                            </form>
                         </div>
 
                     </div>
-
-                </form>
-
             </div>
 
             <div class="dirrecion">
-                <form action="">
+               
                     <h3>Dirección</h3>
 
                     <div class="mb-3 mt-3">
-                        <label for="">Calle:</label>
-                        <input type="street" class="form-control w-75" id="street" placeholder="Calle y número"
-                            name="street">
+                        <form id="formStreet" name="formStreet" class="d-flex">
+                           <div class="op">
+                                <label>Calle:</label>
+                                <input name="street" id="street" data-validetta="street"  class="w-75"value='Nuevo Leon 41' disabled />
+                           </div>
+                            <div class="botones">
+                                <a class="btn brown cambiarCalle">Modificar</a>
+                                <button type="t" name="btnUpdateStreet" id="btnUpdateStreet" class="btn btn-outline-success"                                     disabled>Actualizar</button>
+                            </div>
+                        </form>
                     </div>
 
                     <div class="mb-3 mt-3">
-                        <label for="">Colonia</label>
-                        <input type="suburb" class="form-control w-75" id="suburb" placeholder="" name="suburb">
+                        <form id="formColonia" name="forColonoia" class="d-flex">
+                            <div class="op">
+                                <label>Colonia:</label>
+                                <input name="colonia" id="colonia" data-validetta="name" value='Narvarte' disabled />
+                            </div>
+                            <div class="botones">
+                                <a class="btn brown cambiarColonia">Modificar</a>
+                                 <button type="submit" name="btnUpdateColonia" id="btnUpdateColonia" class="btn btn-outline-success" 
+                                 disabled>Actualizar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="mb-3 mt-3" >
+                        <form id="formAlcaldia" name="forAlcaldia" class="d-flex" >
+                            <div class="op">
+                                <label for="">Alcaldia:</label>
+                                <select id="alcaldia"  disabled >
+                                    <option value="Azcapotzalco">Azcapotzalco</option>
+                                    <option value="Coyoacán">Coyoacán</option>
+                                    <option value="Cuajimalpa de Morelos">Cuajimalpa</option>
+                                    <option value="Gustavo A. Madero"> Gustavo A. Madero</option>
+                                    <option value="Iztacalco">Iztacalco</option>
+                                    <option value="Iztapalapa">Iztapalapa</option>
+                                    <option value="La Magdalena Contreras">La Magdalena Contreras</option>
+                                    <option value="Milpa Alta">Milpa Alta</option>
+                                    <option value="Álvaro Obregón">Álvaro Obregón</option>
+                                    <option value="Tláhuac">Tláhuac</option>
+                                    <option value="Tlalpan">Tlalpan</option>
+                                    <option value="Xochimilco">Xochimilco</option>
+                                    <option value="Benito Juárez">Benito Juárez</option>
+                                    <option value="Cuauhtémoc">Cuauhtémoc</option>
+                                    <option value="">Miguel Hidalgo</option>
+                                    <option value="">Venustiano Carranza</option>
+                                </select>
+                            </div>
+                            <div class="botones">
+                                <a class="btn brown cambiarAlcaldia ">Modificar</a>
+                                <button type="submit" name="btnUpdateAlcaldia" id="btnUpdateAlcaldia" 
+                                class="btn btn-outline-success" disabled>Actualizar</button>
+                            </div>
+                        </form>
                     </div>
 
                     <div class="mb-3 mt-3">
-                        <label for="">Alcaldia</label>
-                        <select id="alcaldias" class="form-select w-75">
-                            <option value="Azcapotzalco">Azcapotzalco</option>
-                            <option value="Coyoacán">Coyoacán</option>
-                            <option value="Cuajimalpa de Morelos">Cuajimalpa</option>
-                            <option value="Gustavo A. Madero"> Gustavo A. Madero</option>
-                            <option value="Iztacalco">Iztacalco</option>
-                            <option value="Iztapalapa">Iztapalapa</option>
-                            <option value="La Magdalena Contreras">La Magdalena Contreras</option>
-                            <option value="Milpa Alta">Milpa Alta</option>
-                            <option value="Álvaro Obregón">Álvaro Obregón</option>
-                            <option value="Tláhuac">Tláhuac</option>
-                            <option value="Tlalpan">Tlalpan</option>
-                            <option value="Xochimilco">Xochimilco</option>
-                            <option value="Benito Juárez">Benito Juárez</option>
-                            <option value="Cuauhtémoc">Cuauhtémoc</option>
-                            <option value="">Miguel Hidalgo</option>
-                            <option value="">Venustiano Carranza</option>
-                        </select>
+                        <form id="formZipCode" name="forZip" class="d-flex">
+                           <div class="op">
+                                <label>Codigo Postal:</label>
+                                <input name="ZipCode" id="zipCode"  data-validetta="zip" value='09518' disabled />
+                           </div>
+                           <div class="botones">
+                                <a class="btn brown cambiarCodigo">Modificar</a>
+                                <button type="submit" name="btnUpdateZipCode" id="btnUpdateZipCode" class="btn btn-outline-success " disabled>Actualizar</button>
+                           </div>
+                        </form>
                     </div>
-
-
-                    <div class="mb-3 mt-3">
-                        <label for="">Codigó Postal</label>
-                        <input type="zip-code" class="form-control w-75" id="zip-code" placeholder="" name="zip-code">
-                    </div>
-                    <div><button class="btn-primary">Guardar Cambios</button></div>
-                </form>
             </div>
 
         </div>

@@ -44,7 +44,7 @@ input,select{height: 1.85rem;}
     .data-user img{height: 5.5rem;width: 5.5rem; margin-top:0.75rem ;}
     .user{display: none;}
     .log-out{display: block;}
-    #formName,#formEmail,#formPhone,#formAlcaldia,#formColonia,#formZipCode,#formStreet{flex-direction: column; width: 100%;}
+    #formName,#formEmail,#formPhone,#formRFC,#formAlcaldia,#formColonia,#formZipCode,#formStreet{flex-direction: column; width: 100%;}
     input,select{width: 90%;}
     .op{flex-direction: column;}
     .botones{margin-top: 1rem;}

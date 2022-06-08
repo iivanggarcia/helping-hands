@@ -6,11 +6,19 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+    $(".cambiarRFC").click(function(){
+        $("#RFC").removeAttr("disabled");
+        $("#btnUpdateRFCS").removeAttr("disabled");
+    });
+});
+
+$(document).ready(function(){
     $(".cambiarName").click(function(){
         $("#nombre").removeAttr("disabled");
         $("#btnUpdateName").removeAttr("disabled");
     });
 });
+
 
 $(document).ready(function(){
     $(".cambiarEmail").click(function(){
