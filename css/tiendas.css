@@ -1,0 +1,21 @@
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card{
+    width: 43%; 
+    margin: 3vh;
+}
+
+@media only screen and (max-width: 991.20px) {
+    .card{
+        width: 90%; 
+        margin: 3vh;
+    }
+}

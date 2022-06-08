@@ -38,3 +38,11 @@
 .login-forgot{float: right;}
 .submit{width: 100%;}
 .img-hm30{height: 30px;}
+
+.btnContainer{
+    margin-top: 10vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

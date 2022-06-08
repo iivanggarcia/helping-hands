@@ -1,3 +1,49 @@
+<?php
+    session_start();
+    $sesion = isset($_SESSION["login"]);
+
+    $conexion = mysqli_connect("localhost","root","","usuarios");
+    mysqli_set_charset($conexion,"utf8");
+
+    $infUsuario;
+
+    if($sesion == 1){
+      $correo = $_SESSION["login"];
+      $sqlUsuario = "SELECT * FROM usuarios WHERE correo = '$correo'";
+      $resUsuario = mysqli_query($conexion,$sqlUsuario);
+      $infUsuario = mysqli_fetch_row($resUsuario);
+    
+      $tipoUsuario = $infUsuario[5];
+    } else {
+      $tipoUsuario = 2;
+    }
+
+    ////Numero de registros
+    $sqlNumOrg = "SELECT COUNT(*) FROM organizaciones WHERE TIPO_ORGANIZACION='1'";
+    $resNumOrg = mysqli_query($conexion,$sqlNumOrg);
+    $numOrg =  mysqli_fetch_row($resNumOrg);
+    $trNumOrg = $numOrg[0];
+
+    ////visualización de registros como card
+    $sqlOrganizacionesCard = "SELECT * FROM organizaciones WHERE TIPO_ORGANIZACION = '1'";
+    $resOrganizacionesCard = mysqli_query($conexion,$sqlOrganizacionesCard);
+    $trOrganizacionesCard = "";
+    while($filasCard = mysqli_fetch_array($resOrganizacionesCard,2)){
+        if($filasCard[10] == NULL) $fila10 = "";
+        else $fila10 = "($filasCard[10])";
+        $trOrganizacionesCard .= 
+            "<div class='card'>
+                <div class='card-body'>
+                    <h5 class='card-title'>$filasCard[3]</h5>
+                    <p class='card-text'><b>Ubicación:</b> $filasCard[8] <br> <b>Contacto:</b> $filasCard[9] $fila10 </p>
+                    <a href='#' class='card-link'>Ver Productos</a>
+                </div>
+            </div>
+            ";
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,11 +51,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helping Hands - Registro</title>
+    <title>Helping Hands</title>
     <link rel="icon" type="image/x-icon" href="./../rsc/favicon.ico">
     <!--CSS-->
     <link rel="stylesheet" href="./../css/index.css">
-    <link rel="stylesheet" href="./../css/login.css">
+    <link rel="stylesheet" href="./../css/tiendas.css">
     <link href="./../js/plugins/validetta101/validetta.min.css" rel="stylesheet">
     <link href="./../js/plugins/confirm334/jquery-confirm.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,7 +71,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="./../js/registro.js"></script>
+    <script src="./../js/index.js"></script>
 </head>
 
 <body>
@@ -63,14 +109,22 @@
         </div>
     </nav>
 
-    <div class="container login-form" id="container">
-        <h2 class="login-title">Registro</h2>
-        <div class="btnContainer">
-            <a href="./../pages/registroOrganizacion.html" type="button" class="btn btn-dark">Registrarte como organización benéfica</a>
-            <a href="./../pages/registroEmpresa.html" type="button" class="btn btn-dark">Registrarte como empresa que ofrece productos</a>
+    <main>
+        <div class="main-cont">
+            <div class="tienda">
+                <div class="text-center">
+                    <h1 class="text-center" style="text-align: center;"><?php echo $trNumOrg;?> Tiendas disponibles</h1>
+                </div>
+
+                <div class="cardContainer">
+                    <?php echo $trOrganizacionesCard;?>
+                </div>
+            </div>           
         </div>
-    </div>
-    
+
+        
+    </main>
+
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

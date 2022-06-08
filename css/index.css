@@ -67,12 +67,19 @@
     justify-content: space-between;
 }
 
-.title a{
-    padding: 1vh;
-    color: black;
+.foot{
+    display: flex;
+    justify-content: center;
 }
 
-.title a:hover{
+.foot a{
+    padding: 1vh;
+    color: rgb(248, 145, 145);
+    font-size: 5vh;
+    text-align: center;
+}
+
+.foot a:hover{
     color: black;
 }
 
@@ -97,4 +104,15 @@
     width: 33.33%;
     height: 20vh;
     background-color: black;
+}
+
+.btn-bold{
+    background-color: rgba(255, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 10% 0;
+    margin-left: 5px;
+    border: 3px;
+    border-color: black;
+    text-decoration: none;
+    margin-bottom: 5vh;
 }
