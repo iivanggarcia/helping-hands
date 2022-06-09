@@ -12,7 +12,7 @@
 
     $respAX_JSON = array();
     $conexion = mysqli_connect("localhost","root","","usuarios");
-    $sql = "INSERT INTO organizaciones (TIPO_ORGANIZACION,RFC, NOMBRE_CENTRO, CORREO_ELECTRONICO, CIUDAD, DELEGACIÓN, CP, CALLE,TELEFONO,EXTENSION,CONTRASENA) VALUES ('0', '$rfc', '$nombre', '$correo', '$ciudad', '$delegacion', '$cp', '$calle', '$telefono', '$extencion', '$contrasena')";
+    $sql = "INSERT INTO organizaciones (TIPO_ORGANIZACION,RFC, NOMBRE_CENTRO, CORREO_ELECTRONICO, CIUDAD, DELEGACIÓN, CP, CALLE,TELEFONO,EXTENSION,CONTRASENA) VALUES ('1', '$rfc', '$nombre', '$correo', '$ciudad', '$delegacion', '$cp', '$calle', '$telefono', '$extencion', '$contrasena')";
     $sqlCheckCorreo = "SELECT * FROM organizaciones WHERE CORREO_ELECTRONICO = '$correo'";
     $resultadoCheckCorreo = mysqli_query($conexion,$sqlCheckCorreo);
     

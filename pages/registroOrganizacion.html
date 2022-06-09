@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helping Hands - Registro Organización</title>
+    <link rel="icon" type="image/x-icon" href="./../rsc/favicon.ico">
+    <!--CSS-->
+    <link rel="stylesheet" href="./../css/index.css">
+    <link rel="stylesheet" href="./../css/login.css">
+    <link href="./../js/plugins/validetta101/validetta.min.css" rel="stylesheet">
+    <link href="./../js/plugins/confirm334/jquery-confirm.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--js-->
+    <script src="./../js/jquery-3.6.0.min.js"></script>
+    <script src="./../js/plugins/validetta101/validetta.min.js"></script>
+    <script src="./../js/plugins/validetta101/validettaLang-es-ES.js"></script>
+    <script src="./../js/plugins/confirm334/jquery-confirm.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <script type="module" src="./../js/registroOrganizacion.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./../index.php">Helping <img src="./../rsc/logo.png" class="img-hm30">
+                Hands</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                </ul>
+                <form class="d-flex me-auto" role="search">
+
+                </form>
+                <ul class="navbar-nav me-left mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-light black-bold" href="#"> <i class="fa-solid fa-cart-shopping"></i>
+                            Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark grey-bold" href="./../pages/login.html"> <i
+                                class="fa-solid fa-user"></i> Iniciar sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark grey-bold" href="./../pages/registro.html">Regístrate</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container login-form" id="container">
+        <h2 class="login-title">Registro como organización</h2>
+        <form  id="formRegistroOrganizacion" enctype="multipart/form-data" autocomplete="on">
+            <div class="input-group">
+                <input class="form-control" type="text" name="txtNombre" id="txtNombre"
+                    placeholder="Nombre de la organización" data-validetta="required">
+            </div>
+            <div class="input-group">
+                <input class="form-control" type="text" name="txtCorreo" id="txtCorreo" placeholder="Correo"
+                    data-validetta="required,email">
+            </div>
+            <div class="input-group">
+                <input class="form-control" type="number" name="txtRFC" id="txtRFC" placeholder="RFC"
+                    data-validetta="required">
+            </div>
+            <div class="input-group">
+                <input class="form-control" type="text" name="txtCiudad" id="txtCiudad" placeholder="Ciudad"
+                    data-validetta="required">
+            </div>
+            <div class="input-group">
+                <input class="form-control" type="text" name="txtDelegacion" id="txtDelegacion" placeholder="Delegación"
+                    data-validetta="required">
+            </div>
+            <div class="input-group">
+                <input class="form-control" type="text" name="txtCP" id="txtCP" placeholder="Código Postal"
+                    data-validetta="required">
+            </div>
+            <div class="input-group">
+                <input class="form-control" type="text" name="txtCalle" id="txtCalle" placeholder="Calle y número"
+                    data-validetta="required">
+            </div>
+            <div class="input-group">
+                <input class="form-control" type="number" name="txtNumero" id="txtNumero" placeholder="Número Celular"
+                    data-validetta="required,number">
+            </div>
+            <div class="input-group">
+                <input class="form-control" type="number" name="txtExt" id="txtExt" placeholder="Extención"
+                    data-validetta="number">
+            </div>
+            <div class="input-group">
+                <input class="form-control" type="password" name="txtContrasena" id="txtContrasena"
+                    placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Debe contener al menos un número y una letra minúscula y mayúscula, y al menos 8 o más caracteres"
+                    data-validetta="required,minLength[8],equalTo[passwordsignup_confirm]">
+            </div>
+            <br>
+            <button class="btn btn-dark submit" type="submit">Registrarse</button>
+            <br><br>
+            <div class="link-cont">
+                <a href="./login.html"> ¿Ya tiene una cuenta? Inicie sesión </a>
+                <a href="./../index.php"> Cancelar </a>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
