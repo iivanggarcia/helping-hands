@@ -17,7 +17,7 @@
         $tipoUsuario = $infUsuario[0];
 
         //Cargar lista del carrito de la BD
-        $sqlCarrito = "SELECT productos.NOMBRE_PRODUCTO,carrito.CANTIDAD,carrito.ID_PRODUCTO FROM  productos, carrito WHERE carrito.ID_O=$infUsuario[1] AND productos.ID_PRODUCTO=carrito.ID_PRODUCTO;";
+        $sqlCarrito = "SELECT productos.NOMBRE_PRODUCTO,carrito.CANTIDAD,carrito.ID_PRODUCTO,organizaciones.NOMBRE_CENTRO FROM  productos, carrito, organizaciones WHERE carrito.ID_O=$infUsuario[1] AND productos.ID_PRODUCTO=carrito.ID_PRODUCTO AND organizaciones.ID_O=productos.ID_O;";
         $resCarrito = mysqli_query($conexion,$sqlCarrito);
         $listaCarrito = "";
         $listaVacia = "";
@@ -25,6 +25,7 @@
         while($filas=mysqli_fetch_array($resCarrito,2)){
             $listaCarrito .= "<tr>
                 <td>$filas[0]</td>
+                <td>$filas[3]</td>
                 <td>$filas[1]</td>
                 <td><i class='btn brown far fa-trash-alt deleteCarrito' data-usr=$infUsuario[1] data-prod=$filas[2]></i></td>
                 </tr>";
@@ -51,6 +52,7 @@
     <link rel="icon" type="image/x-icon" href="./../rsc/favicon.ico">
     <!--CSS-->
     <link rel="stylesheet" href="./../css/index.css">
+    <link rel="stylesheet" href="./../css/carrito.css">
     <link href="./../js/plugins/validetta101/validetta.min.css" rel="stylesheet">
     <link href="./../js/plugins/confirm334/jquery-confirm.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -111,7 +113,7 @@
         <div id="list" class="row">
             <table class="striped centered responsive-table">
                 <thead>
-                    <tr><td>Producto</td><td>Cantidad</td><td>Precio</td><td>Acción</td></tr>
+                    <tr><td>Producto</td><td>Proveedor</td><td>Cantidad</td><td>Acción</td></tr>
                 </thead>
                 <tbody>
                     <?php if($total>0) echo $listaCarrito?>
@@ -120,32 +122,19 @@
             <?php if($total==0) echo $listaVacia?>
         </div>
         <hr>
-        <div class="row">
-            <h6>
-            <div class="col s6 m8" style="text-align: right">Total a pagar:</div>
-            <div clas="col s6 m4" style="text-align: center"><b>$ <?php echo $total?></b></div>
-            </h6>
+        <div class="car-total">
+            <div class="align-items-end">Total de artículos: <b><?php echo $total?></b> artículo(s)</div>
         </div>
-        <div class="row">
-            <h6>
-            <div class="col s6 m8" style="text-align: right">Saldo actual:</div>
-            <div clas="col s6 m4" style="text-align: center"><b>$ <?php echo $infUsuario[6]?></b></div>
-            </h6>
-        </div>
-        <div class="row">
-            <div class="col m6"></div>
+        <div class="car-btn">
             <?php
                 if($total>0)
-                    if($total<=$infUsuario[6]){
-                        //saldo suficiente, pagar
-                        echo "<div class='col s12 m6'><a class='btn green pagarProductos' data-usr='$infUsuario[0]' data-total='$total' style='width:100%;'>Pagar</a></div>";
-                    }else{
-                        //saldo insuficiente, agregar
-                        echo "<div class='col s12 m6'><h6 align='center' style='color:red;'>Saldo insuficiente para pagar.</h6></div>";
-                    }
+                echo"<div class=''><a class='btn btn-success pagarProductos' data-usr='$infUsuario[1]' data-total='$total' style='width:100%;'>Pagar</a></div>"
             ?>
         </div>
     </div>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 </body>
 </html>

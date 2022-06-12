@@ -92,7 +92,7 @@
     color: black;
 }
 
-/*.btn-bold{
+.btn-bold{
     background-color: rgba(255, 0, 0, 0.6);
     border-radius: 15px;
     padding: 10% 0;
@@ -101,7 +101,7 @@
     border-color: black;
     text-decoration: none;
     margin-bottom: 5vh;
-}*/
+}
 
 .cardContainer{
     display: flex;
