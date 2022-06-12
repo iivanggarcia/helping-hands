@@ -8,40 +8,39 @@
     $infUsuario;
 
     if($sesion == 1){
-        $correo = $_SESSION["login"];
-        $sqlUsuario = "SELECT * FROM organizaciones WHERE CORREO_ELECTRONICO = '$correo'";
-        $resUsuario = mysqli_query($conexion,$sqlUsuario);
-        $infUsuario = mysqli_fetch_row($resUsuario);
-      
-        $tipoUsuario = $infUsuario[0];
-      } else {
-        $tipoUsuario = 2;
-      }
-
-    ////Numero de registros
-    $sqlNumOrg = "SELECT COUNT(*) FROM organizaciones WHERE TIPO_ORGANIZACION='1'";
-    $resNumOrg = mysqli_query($conexion,$sqlNumOrg);
-    $numOrg =  mysqli_fetch_row($resNumOrg);
-    $trNumOrg = $numOrg[0];
-
-    ////visualización de registros como card
-    $sqlOrganizacionesCard = "SELECT * FROM organizaciones WHERE TIPO_ORGANIZACION = '1'";
-    $resOrganizacionesCard = mysqli_query($conexion,$sqlOrganizacionesCard);
-    $trOrganizacionesCard = "";
-    while($filasCard = mysqli_fetch_array($resOrganizacionesCard,2)){
-        if($filasCard[10] == NULL) $fila10 = "";
-        else $fila10 = "($filasCard[10])";
-        $trOrganizacionesCard .= 
-            "<div class='card'>
-                <div class='card-body'>
-                    <h5 class='card-title'>$filasCard[3]</h5>
-                    <p class='card-text'><b>Ubicación:</b> $filasCard[8] <br> <b>Contacto:</b> $filasCard[9] $fila10 </p>
-                    <a href='productos.php?idO=$filasCard[1]' class='card-link'>Ver Productos</a>
-                </div>
-            </div>
-            ";
+      $correo = $_SESSION["login"];
+      $sqlUsuario = "SELECT * FROM organizaciones WHERE CORREO_ELECTRONICO = '$correo'";
+      $resUsuario = mysqli_query($conexion,$sqlUsuario);
+      $infUsuario = mysqli_fetch_row($resUsuario);
+    
+      $tipoUsuario = $infUsuario[0];
+    } else {
+      $tipoUsuario = 2;
     }
     
+    $sqlInventario0 = "SELECT * FROM productos WHERE ID_O=".$_GET["idO"];
+    $resInventario0 = mysqli_query($conexion,$sqlInventario0);
+    $trInventario0 = "";
+    while($filas=mysqli_fetch_array($resInventario0,2)){
+        $trInventario0 .= 
+            "<tr><td>$filas[2]</td>
+            <td>$filas[3]</td>
+            <td>$filas[5]</td>
+            <td>$filas[6]</td>
+            <td>";
+        if($sesion)
+            $trInventario0.="<i class='btn brown fas fa-cart-plus addCarrito' data-usr='$infUsuario[1]' data-prod='$filas[1]'></i>";
+        else
+            $trInventario0.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+                
+        $trInventario0 .="</td>
+        </tr>";
+    }
+
+    $sqlTienda0 = "SELECT * FROM organizaciones WHERE ID_O=".$_GET["idO"];
+    $resTienda0 = mysqli_query($conexion,$sqlTienda0);
+    $infTienda0 = mysqli_fetch_row($resTienda0);
+    $trTienda0 = "<h2>$infTienda0[3]</h2>";
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +55,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="./../css/index.css">
     <link rel="stylesheet" href="./../css/tiendas.css">
+    <link rel="stylesheet" href="./../css/productos.css">
     <link href="./../js/plugins/validetta101/validetta.min.css" rel="stylesheet">
     <link href="./../js/plugins/confirm334/jquery-confirm.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -71,7 +71,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="./../js/main.js"></script>
+    <script src="./../js/productos.js"></script>
 </head>
 
 <body>
@@ -108,21 +108,25 @@
         </div>
     </nav>
 
-    <main>
-        <div class="main-cont">
-            <div class="tienda">
-                <div class="text-center">
-                    <h1 class="text-center" style="text-align: center;"><?php echo $trNumOrg;?> Tiendas disponibles</h1>
-                </div>
-
-                <div class="cardContainer">
-                    <?php echo $trOrganizacionesCard;?>
-                </div>
-            </div>           
+    <br><br><br><br>
+    <div class="cont-table">
+        <div class="title align-items-end">
+            <?php echo $trTienda0;?>
         </div>
-
-        
-    </main>
+        <br>
+        <div class="table-responsive c-table">
+            <table class="table">
+                <thead class= "rwd_auto fontsize">
+                    <tr><th scope="col">Nombre</th><th scope="col">Descripción</th><th scope="col">Fecha de caducidad</th><th scope="col">Cantidad</th></tr>
+                </thead>
+                <tbody>
+                    <?php echo $trInventario0;?>
+                </tbody>
+            </table>
+        </div>
+        <a href="tiendas.php" class="link-dark">Regresar</a>
+    </div>
+    
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

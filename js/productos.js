@@ -3,7 +3,7 @@ $(document).ready(function(){
       let usr=$(this).attr("data-usr");
       let prod=$(this).attr("data-prod");
       $.ajax({
-        url: "pages/addCarrito.php",
+        url: "./addCarrito.php",
         method: "post",
         data: {usuario:usr,producto:prod},
         cache: false,
