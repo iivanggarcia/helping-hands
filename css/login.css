@@ -51,3 +51,9 @@
     display: flex;
     justify-content: space-between;
 }
+
+#link-cont1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

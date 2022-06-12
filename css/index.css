@@ -70,12 +70,21 @@
 .foot{
     display: flex;
     justify-content: center;
+    width: 5%; 
+    margin: 3vh;
+}
+
+@media only screen and (max-width: 991.20px) {
+    .foot{
+        width: 90%; 
+        margin: 3vh;
+    }
 }
 
 .foot a{
     padding: 1vh;
     color: rgb(248, 145, 145);
-    font-size: 5vh;
+    font-size: 2vh;
     text-align: center;
 }
 
@@ -83,30 +92,7 @@
     color: black;
 }
 
-.central{
-    display: flex;
-    padding-bottom: 3vw;
-}
-
-.central1{
-    width: 33.33%;
-    height: 20vh;
-    background-color: aqua;
-}
-
-.central2{
-    width: 33.33%;
-    height: 20vh;
-    background-color: red;
-}
-
-.central3{
-    width: 33.33%;
-    height: 20vh;
-    background-color: black;
-}
-
-.btn-bold{
+/*.btn-bold{
     background-color: rgba(255, 0, 0, 0.6);
     border-radius: 15px;
     padding: 10% 0;
@@ -115,4 +101,24 @@
     border-color: black;
     text-decoration: none;
     margin-bottom: 5vh;
+}*/
+
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.card{
+    width: 22%; 
+    margin: 3vh;
+}
+
+@media only screen and (max-width: 991.20px) {
+    .card{
+        width: 90%; 
+        margin: 3vh;
+    }
+}
+

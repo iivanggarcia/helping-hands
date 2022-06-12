@@ -7,55 +7,50 @@
 
     $infUsuario;
 
-    if($sesion == 1){
+    if($sesion==1){
+        //Hay sesión de usuario
         $correo = $_SESSION["login"];
         $sqlUsuario = "SELECT * FROM organizaciones WHERE CORREO_ELECTRONICO = '$correo'";
         $resUsuario = mysqli_query($conexion,$sqlUsuario);
         $infUsuario = mysqli_fetch_row($resUsuario);
-      
+        
         $tipoUsuario = $infUsuario[0];
-      } else {
-        $tipoUsuario = 2;
-      }
 
-    ////Numero de registros
-    $sqlNumOrg = "SELECT COUNT(*) FROM organizaciones WHERE TIPO_ORGANIZACION='1'";
-    $resNumOrg = mysqli_query($conexion,$sqlNumOrg);
-    $numOrg =  mysqli_fetch_row($resNumOrg);
-    $trNumOrg = $numOrg[0];
-
-    ////visualización de registros como card
-    $sqlOrganizacionesCard = "SELECT * FROM organizaciones WHERE TIPO_ORGANIZACION = '1'";
-    $resOrganizacionesCard = mysqli_query($conexion,$sqlOrganizacionesCard);
-    $trOrganizacionesCard = "";
-    while($filasCard = mysqli_fetch_array($resOrganizacionesCard,2)){
-        if($filasCard[10] == NULL) $fila10 = "";
-        else $fila10 = "($filasCard[10])";
-        $trOrganizacionesCard .= 
-            "<div class='card'>
-                <div class='card-body'>
-                    <h5 class='card-title'>$filasCard[3]</h5>
-                    <p class='card-text'><b>Ubicación:</b> $filasCard[8] <br> <b>Contacto:</b> $filasCard[9] $fila10 </p>
-                    <a href='#' class='card-link'>Ver Productos</a>
-                </div>
-            </div>
-            ";
+        //Cargar lista del carrito de la BD
+        $sqlCarrito = "SELECT productos.NOMBRE_PRODUCTO,carrito.CANTIDAD,carrito.ID_PRODUCTO FROM  productos, carrito WHERE carrito.ID_O=$infUsuario[1] AND productos.ID_PRODUCTO=carrito.ID_PRODUCTO;";
+        $resCarrito = mysqli_query($conexion,$sqlCarrito);
+        $listaCarrito = "";
+        $listaVacia = "";
+        $total = 0;
+        while($filas=mysqli_fetch_array($resCarrito,2)){
+            $listaCarrito .= "<tr>
+                <td>$filas[0]</td>
+                <td>$filas[1]</td>
+                <td><i class='btn brown far fa-trash-alt deleteCarrito' data-usr=$infUsuario[1] data-prod=$filas[2]></i></td>
+                </tr>";
+            $total += $filas[1];
+        }
+        if($total==0)
+            $listaVacia = "<h4 style='text-align:center'>El carrito está vacío.</h4>";
+    }else{
+        //No hay sesión de usuario
+        header("location: ./login.html");
     }
-    
 ?>
 
+<!--*****************
+    Inicia HTML
+******************-->
 <!DOCTYPE html>
-<html lang="es">
-
+<html>
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helping Hands</title>
+    <title>Helping Hands - Carrito</title>
     <link rel="icon" type="image/x-icon" href="./../rsc/favicon.ico">
     <!--CSS-->
     <link rel="stylesheet" href="./../css/index.css">
-    <link rel="stylesheet" href="./../css/tiendas.css">
     <link href="./../js/plugins/validetta101/validetta.min.css" rel="stylesheet">
     <link href="./../js/plugins/confirm334/jquery-confirm.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -71,11 +66,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="./../js/index.js"></script>
+    <script src="./../js/carrito.js"></script>
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+  <header>
+  <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="./../index.php">Helping <img src="./../rsc/logo.png" class="img-hm30"> Hands</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -107,27 +102,50 @@
             </div>
         </div>
     </nav>
-
-    <main>
-        <div class="main-cont">
-            <div class="tienda">
-                <div class="text-center">
-                    <h1 class="text-center" style="text-align: center;"><?php echo $trNumOrg;?> Tiendas disponibles</h1>
-                </div>
-
-                <div class="cardContainer">
-                    <?php echo $trOrganizacionesCard;?>
-                </div>
-            </div>           
+  </header>
+  <main>
+    <div class="container">
+        <div id="title" class="row">
+            <h4>Carrito de <?php echo $infUsuario[3]?></h4>
         </div>
-
-        
-    </main>
-
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
+        <div id="list" class="row">
+            <table class="striped centered responsive-table">
+                <thead>
+                    <tr><td>Producto</td><td>Cantidad</td><td>Precio</td><td>Acción</td></tr>
+                </thead>
+                <tbody>
+                    <?php if($total>0) echo $listaCarrito?>
+                </tbody>
+            </table>
+            <?php if($total==0) echo $listaVacia?>
+        </div>
+        <hr>
+        <div class="row">
+            <h6>
+            <div class="col s6 m8" style="text-align: right">Total a pagar:</div>
+            <div clas="col s6 m4" style="text-align: center"><b>$ <?php echo $total?></b></div>
+            </h6>
+        </div>
+        <div class="row">
+            <h6>
+            <div class="col s6 m8" style="text-align: right">Saldo actual:</div>
+            <div clas="col s6 m4" style="text-align: center"><b>$ <?php echo $infUsuario[6]?></b></div>
+            </h6>
+        </div>
+        <div class="row">
+            <div class="col m6"></div>
+            <?php
+                if($total>0)
+                    if($total<=$infUsuario[6]){
+                        //saldo suficiente, pagar
+                        echo "<div class='col s12 m6'><a class='btn green pagarProductos' data-usr='$infUsuario[0]' data-total='$total' style='width:100%;'>Pagar</a></div>";
+                    }else{
+                        //saldo insuficiente, agregar
+                        echo "<div class='col s12 m6'><h6 align='center' style='color:red;'>Saldo insuficiente para pagar.</h6></div>";
+                    }
+            ?>
+        </div>
+    </div>
+  </main>
 </body>
-
 </html>
