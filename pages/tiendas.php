@@ -36,7 +36,7 @@
                 <div class='card-body'>
                     <h5 class='card-title'>$filasCard[3]</h5>
                     <p class='card-text'><b>Ubicación:</b> $filasCard[8] <br> <b>Contacto:</b> $filasCard[9] $fila10 </p>
-                    <a href='#' class='card-link'>Ver Productos</a>
+                    <a href='#' class='card-link ver-producto'>Ver Productos</a>
                 </div>
             </div>
             ";
@@ -72,6 +72,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="./../js/index.js"></script>
+    <script src="./../js/tiendas.js"></script>
 </head>
 
 <body>

@@ -128,7 +128,7 @@
         <div class="car-btn">
             <?php
                 if($total>0)
-                echo"<div class=''><a class='btn btn-success pagarProductos' data-usr='$infUsuario[1]' data-total='$total' style='width:100%;'>Pagar</a></div>"
+                echo"<div class=''><a class='btn btn-success pagarProductos' data-usr='$infUsuario[1]' data-total='$total' style='width:100%;'>Completar pedido</a></div>"
             ?>
         </div>
     </div>

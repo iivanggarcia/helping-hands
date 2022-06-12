@@ -74,7 +74,7 @@
     margin: 3vh;
 }
 
-@media only screen and (max-width: 991.20px) {
+@media only screen and (max-width: 1131px) {
     .foot{
         width: 90%; 
         margin: 3vh;
