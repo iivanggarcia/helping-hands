@@ -13,7 +13,7 @@
       $resUsuario = mysqli_query($conexion,$sqlUsuario);
       $infUsuario = mysqli_fetch_row($resUsuario);
     
-      $tipoUsuario = $infUsuario[0];
+      $tipoUsuario = $infUsuario[0]; //0 es fundacion
     } else {
       $tipoUsuario = 2;
     }
@@ -199,7 +199,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Store</title>
+    <title>Helping Hands</title>
     <link rel="icon" type="image/x-icon" href="./rsc/favicon.ico">
     <!--CSS-->
     <link rel="stylesheet" href="./css/index.css">
@@ -243,7 +243,7 @@
                         <a class='nav-link text-light black-bold' href='./pages/carrito.php'><i class='fa-solid fa-cart-shopping'></i> Carrito</a>
                     </li>";?>
                     <li class="nav-item">
-                        <a class="nav-link text-dark grey-bold" href='<?php if($sesion) echo "./pages/pagusuario.php"; else echo "./pages/login.html";?>'> <i
+                        <a class="nav-link text-dark grey-bold" href='<?php if($sesion) if($tipoUsuario ==0) echo "./pages/profile-client.php"; else echo "./pages/profile-store.php"; else echo "./pages/login.html";?>'> <i
                                 class="fa-solid fa-user"></i> <?php if($sesion) echo "Página de usuario"; else echo "Iniciar sesión";?></a>
                     </li>
                     <li class="nav-item">

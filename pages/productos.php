@@ -50,7 +50,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helping Hands</title>
+    <title>Helping Hands - Productos</title>
     <link rel="icon" type="image/x-icon" href="./../rsc/favicon.ico">
     <!--CSS-->
     <link rel="stylesheet" href="./../css/index.css">
@@ -96,7 +96,7 @@
                         <a class='nav-link text-light black-bold' href='./../pages/carrito.php'><i class='fa-solid fa-cart-shopping'></i> Carrito</a>
                     </li>";?>
                     <li class="nav-item">
-                        <a class="nav-link text-dark grey-bold" href='<?php if($sesion) echo "./../pages/pagusuario.php"; else echo "./../pages/login.html";?>'> <i
+                        <a class="nav-link text-dark grey-bold" href='<?php if($sesion) if($tipoUsuario ==0) echo "./profile-client.php"; else echo "./profile-store.php"; else echo "./login.html";?>'> <i
                                 class="fa-solid fa-user"></i> <?php if($sesion) echo "Página de usuario"; else echo "Iniciar sesión";?></a>
                     </li>
                     <li class="nav-item">
