@@ -65,14 +65,14 @@
     <h1><a name="top"></a>ACTA DE ENTREGA DE DONACIONES '.$hoy.'</h1>
     <br><br>
     <b>'.$infOrganizacion[3].'</b> identificado con RFC '.$infOrganizacion[2].' certifica la entrega de los siguientes materiales en calidad de donación.
-     - '.$infPedido[2].' unidades de '.$infProd[2].'.
-     <br>
-    Se hace constar que la presente donación está en buen estado.
+     <br><br>- '.$infPedido[2].' unidades de '.$infProd[2].'.
+     <br><br><br>
+    Se hace constar que la presente donación está en buen estado.<br><br>
     Firma a '.$hoy.'';
 
-    use Mpdf\Mpdf;
+
     require_once('./../vendor/autoload.php');
-    $mpdf = new Mpdf();
+    $mpdf = new \Mpdf\Mpdf();
     $mpdf = new \Mpdf\Mpdf(['orientation' => 'P']); //L para horizontal, P para vertical
     $mpdf->SetWatermarkText("Helping Hands"); //marca de agua
     $mpdf->showWatermarkText = true;

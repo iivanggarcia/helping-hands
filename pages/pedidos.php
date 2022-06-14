@@ -60,8 +60,7 @@
     <script src="./../js/pedidos.js"></script>
 </head>
 <body>
-  <header>
-  <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="./../index.php">Helping <img src="./../rsc/logo.png" class="img-hm30"> Hands</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -93,15 +92,15 @@
             </div>
         </div>
     </nav>
-  </header>
   <div class="container">
             <div class="row">
-            <h3 style="text-align:center;">Pedidos</h3>
+            
+            <h3 style="text-align:center; padding-top: 15vh">Pedidos</h3>
                 <!-- clase de materialize-->
                 <table class="centered striped responsive-table">
                     <thead>
                         <!--- los encabezados de la tabla--->
-                        <tr><th>Pedido No.</th><th>Productos</th><th>Cantidad</th><th>Completado</th></tr>
+                        <tr><th>Pedido No.</th><th>Productos</th><th>Cantidad</th><th>Marcar Completado</th></tr>
                     </thead>
                     <tbody>
                         <?php echo $trAlumnos; ?>

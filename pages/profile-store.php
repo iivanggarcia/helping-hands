@@ -100,14 +100,14 @@
         <div class="panel-lateral mt-2 ">
         </div>
 
-        <div class="panel-principal">
+        <div class="panel-principal" style="padding-top: 15vh;">
             <!--Data User-->
             <div class="data-user  mb-5 d-flex">
                 <img src="./../rsc/user-new.png" alt="profile-picture" class="rounded-circle bordes">
                 <div class="data">
                     <?php echo $trOrganizacionesCard;?>
                     <a href="./pedidos.php">Ver pedidos</a>
-                    <a id="editar" href="#info" data-bs-toggle="collapse">Editar</a>
+                    <a id="editar" href="#info" data-bs-toggle="collapse">Editar Información</a>
                 </div>
             </div>
 
